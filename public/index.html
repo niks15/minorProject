@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="minorApp">
 
 <head>
 
@@ -7,15 +7,16 @@
 
 <title>TRENDING.....</title>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 
 </head>
 
-<body style="background: linear-gradient(#808080,#DCDCDC);">
+<body style="background: linear-gradient(#808080,#DCDCDC);"  ng-controller="AppCtrl">
 	<div class="container" style="background: linear-gradient(#2F4F4F,#778899); width:80%;">					<!--Start Main-->
 		<div class="page-header" >					<!--Start Heading-->
 			<img src="Data\logo.png">
@@ -30,13 +31,17 @@
 			<button type="submit" class="btn btn-default btn-lg">FUNNY</button>
 
 			<form style="float: right;"> 
-				<input type="text" placeholder="Search" class="input-sm">
-				<button type="submit" class="glyphicon glyphicon-search btn-lg"></button>
+				<input type="text" placeholder="Search" class="input-ss" ng-model="searchText">
+				<button type="submit" class="glyphicon glyphicon-search btn-lg" ng-click="searchIt()"></button>
 			</form>
 		
 		</div>										<!--End Nav-->
 							<!--End Funny-->
 	</div>
+
+    <!--<div class="container">-->
+        <!--<p>{{testText}}</p>-->
+    <!--</div>-->
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -50,19 +55,19 @@
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox" style="margin-top:20px">
 			<div class="item active container" style="max-height: 400px;">
-				<img width="100%" style="max-height:100%" src="Data\most-beautiful-landscapes-in-europe-copyright-vicky-sp-european-best-destinations.jpg">
+                <img ng-src={{imgSrc1}} />
 			</div>
 
 			<div class="item container" style="max-height: 400px;">
-				<img width="100%" style="max-height:100%" src="Data\most-beautiful-landscapes-in-europe-hallstatt-copyright-canadastock-european-best-destinations.jpg">
+                <img ng-src={{imgSrc2}} />
 			</div>
 
 			<div class="item container" style="max-height: 400px;">
-				<img width="100%" style="max-height:100%" src="Data\most-beautiful-landscapes-in-europe-the-dolomites-in-tyrol-copyright-ttstudio-european-best-destinations.jpg">
+                <img ng-src={{imgSrc3}} />
 			</div>
 
 			<div class="item container" style="max-height: 400px;">
-				<img width="100%" style="max-height:100%" src="Data\jgbFbWR.jpg">
+                <img ng-src={{imgSrc4}} />
 			</div>
 		</div>
 
@@ -90,17 +95,18 @@
 			<div class="col-lg-5" style="margin:30px; border-left: 1px solid;"> 
 
 				<h4>Follow us on:</h4>
-				<img style="margin-left:15px;" src="Data\fb.png"></img><br>
-				<img style="margin-left:15px;" src="Data\twitter.png"></img><br>
-				<img style="margin-left:15px;" src="Data\instagram.png"></img>
+				<img style="margin-left:15px;" src="Data\fb.png"><br>
+				<img style="margin-left:15px;" src="Data\twitter.png"><br>
+				<img style="margin-left:15px;" src="Data\instagram.png">
 
 
 			</div>
 		</div>
 	</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <script src="Controllers\bitchController.js"></script>
 
 </body>
 
